@@ -81,6 +81,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get form data
             const formData = new FormData(contactForm);
             
+            // Show loading animation
+            const submitButton = contactForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            `;
+            submitButton.disabled = true;
+            
             // Send to Google Apps Script (Contact Form Endpoint)
             fetch('https://script.google.com/macros/s/AKfycbz6CnjL5IYrHfbEo2LzcIGyb7C_bSN-14F1rdzLIIPMXvJnwD9iWdhwn9GT2ecZ4T7PvA/exec', {
                 method: 'POST',
@@ -88,6 +99,10 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(result => {
+                // Restore button
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                
                 if (result.status === 'success') {
                     // Redirect to thank you page on successful submission
                     window.location.href = 'thankyou.html';
@@ -97,6 +112,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .catch(error => {
+                // Restore button
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                
                 console.error('Error:', error);
                 alert('Error sending message. Please try again.');
             });
@@ -112,6 +131,17 @@ document.addEventListener('DOMContentLoaded', () => {
             // Get form data
             const formData = new FormData(newsletterForm);
             
+            // Show loading animation
+            const submitButton = newsletterForm.querySelector('button[type="submit"]');
+            const originalText = submitButton.innerHTML;
+            submitButton.innerHTML = `
+                <svg class="animate-spin h-5 w-5 text-white" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24">
+                    <circle class="opacity-25" cx="12" cy="12" r="10" stroke="currentColor" stroke-width="4"></circle>
+                    <path class="opacity-75" fill="currentColor" d="M4 12a8 8 0 018-8V0C5.373 0 0 5.373 0 12h4zm2 5.291A7.962 7.962 0 014 12H0c0 3.042 1.135 5.824 3 7.938l3-2.647z"></path>
+                </svg>
+            `;
+            submitButton.disabled = true;
+            
             // Send to Google Apps Script (Newsletter Endpoint)
             fetch('https://script.google.com/macros/s/AKfycbz0SDOJMc9YkWDIfYMYFfqIk2HD2cvXBzktHrVsXJQGpL9VZzR1sfemO7D24tl7mgJf/exec', {
                 method: 'POST',
@@ -119,6 +149,10 @@ document.addEventListener('DOMContentLoaded', () => {
             })
             .then(response => response.json())
             .then(result => {
+                // Restore button
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                
                 if (result.status === 'success') {
                     // Show success message
                     alert('Thank you for subscribing to our newsletter!');
@@ -129,6 +163,10 @@ document.addEventListener('DOMContentLoaded', () => {
                 }
             })
             .catch(error => {
+                // Restore button
+                submitButton.innerHTML = originalText;
+                submitButton.disabled = false;
+                
                 console.error('Error:', error);
                 alert('Error subscribing. Please try again.');
             });
