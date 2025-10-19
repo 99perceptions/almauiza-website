@@ -1,0 +1,587 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Teacher Training Program - Al Mauiza Foundation</title>
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+    </style>
+</head>
+<body class="bg-gray-50">
+    <!-- Countdown Banner -->
+    <div id="countdown-banner" class="bg-gradient-to-r from-indigo-600 via-purple-600 to-indigo-600 text-white shadow-lg p-2">
+        <div class="max-w-7xl mx-auto px-2 md:px-4">
+            <div class="flex flex-wrap items-center justify-center lg:justify-between gap-x-4 gap-y-2">
+                <div class="flex items-center gap-x-3 justify-center flex-wrap sm:flex-nowrap">
+                    <p class="text-[11px] md:text-xs font-semibold whitespace-nowrap">🎓 Teacher Training Program Starts In:</p>
+                    <div class="flex gap-1.5 md:gap-2">
+                        <div class="bg-white/20 backdrop-blur-sm px-2 py-1 rounded-lg min-w-[48px] md:min-w-[55px] text-center">
+                            <div id="days" class="text-base md:text-lg font-bold leading-tight">00</div>
+                            <div class="text-[10px] md:text-xs leading-tight">Days</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm px-2 py-1 rounded-lg min-w-[48px] md:min-w-[55px] text-center">
+                            <div id="hours" class="text-base md:text-lg font-bold leading-tight">00</div>
+                            <div class="text-[10px] md:text-xs leading-tight">Hours</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm px-2 py-1 rounded-lg min-w-[48px] md:min-w-[55px] text-center">
+                            <div id="minutes" class="text-base md:text-lg font-bold leading-tight">00</div>
+                            <div class="text-[10px] md:text-xs leading-tight">Minutes</div>
+                        </div>
+                        <div class="bg-white/20 backdrop-blur-sm px-2 py-1 rounded-lg min-w-[48px] md:min-w-[55px] text-center">
+                            <div id="seconds" class="text-base md:text-lg font-bold leading-tight">00</div>
+                            <div class="text-[10px] md:text-xs leading-tight">Seconds</div>
+                        </div>
+                    </div>
+                </div>
+                <div class="flex flex-row gap-2">
+                    <a href="teacher-training.html" class="bg-white text-indigo-600 px-4 py-2 rounded-full font-bold hover:bg-gray-100 transition transform hover:scale-105 text-center whitespace-nowrap text-sm">
+                        Learn More
+                    </a>
+                    <a href="https://forms.gle/Ry4sdkVsgU9tztoa6" target="_blank" class="bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-bold hover:bg-yellow-300 transition transform hover:scale-105 text-center whitespace-nowrap text-sm">
+                        Register Now
+                    </a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation -->
+    <nav id="main-nav" class="w-full bg-white/95 backdrop-blur-sm shadow-md z-30 sticky top-0">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+            <div class="flex justify-between items-center py-1.5 md:py-3">
+                <a href="index.html" class="flex items-center space-x-3">
+                    <div>
+                        <span class="text-lg md:text-xl font-bold text-gradient">Al Mauiza Foundation</span>
+                        <p class="text-[10px] md:text-xs text-gray-500">Registered under Section 42 of the Companies Act (2017)</p>
+                    </div>
+                </a>
+                
+                <!-- Desktop Navigation -->
+                <div class="hidden lg:flex space-x-6 items-center">
+                    <a href="index.html" class="text-gray-700 hover:text-indigo-600 transition">Home</a>
+                    <a href="index.html#about" class="text-gray-700 hover:text-indigo-600 transition">About</a>
+                    <a href="index.html#vision" class="text-gray-700 hover:text-indigo-600 transition">Vision</a>
+                    <a href="index.html#programs" class="text-gray-700 hover:text-indigo-600 transition">Programs</a>
+                    <a href="teacher-training.html" class="text-indigo-600 font-semibold transition">Teacher Training</a>
+                    <a href="index.html#leadership" class="text-gray-700 hover:text-indigo-600 transition">Leadership</a>
+                    <a href="index.html#contact" class="text-gray-700 hover:text-indigo-600 transition">Contact</a>
+                </div>
+                
+                <!-- Mobile Menu Button -->
+                <button id="mobile-menu-button" class="lg:hidden hamburger" type="button" aria-label="Menu">
+                    <span class="hamburger-box">
+                        <span class="hamburger-inner"></span>
+                    </span>
+                </button>
+            </div>
+        </div>
+        
+        <!-- Mobile Drawer (slides from left) -->
+        <div id="mobile-drawer" class="fixed lg:hidden left-0 top-0 h-screen w-[80%] max-w-[320px] bg-white shadow-2xl z-50 transform -translate-x-full transition-transform duration-300 ease-in-out">
+            <div class="px-4 pt-8 pb-4 space-y-3">
+                <div class="flex items-center justify-between pb-2 border-b border-gray-200">
+                    <span class="text-base font-semibold text-gray-800">Menu</span>
+                    <button id="mobile-close-button" class="p-2 -mr-2 rounded-md text-gray-600 hover:text-indigo-600 hover:bg-gray-100 focus:outline-none focus:ring-2 focus:ring-indigo-500">
+                        <svg class="w-5 h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24" stroke-width="2.5">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M6 18L18 6M6 6l12 12"></path>
+                        </svg>
+                    </button>
+                </div>
+                <a href="index.html" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md transition">Home</a>
+                <a href="index.html#about" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md transition">About</a>
+                <a href="index.html#vision" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md transition">Vision</a>
+                <a href="index.html#programs" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md transition">Programs</a>
+                <a href="teacher-training.html" class="block text-indigo-600 bg-indigo-50 font-semibold px-3 py-2 rounded-md transition">Teacher Training</a>
+                <a href="index.html#leadership" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md transition">Leadership</a>
+                <a href="index.html#contact" class="block text-gray-700 hover:text-indigo-600 hover:bg-gray-50 px-3 py-2 rounded-md transition">Contact</a>
+                <!-- <div class="pt-3 border-t border-gray-200 space-y-2">
+                    <a href="teacher-training.html" class="block bg-indigo-600 text-white px-4 py-2 rounded-full font-semibold text-center hover:bg-indigo-700 transition">Learn More</a>
+                    <a href="https://forms.gle/Ry4sdkVsgU9tztoa6" target="_blank" class="block bg-yellow-400 text-gray-900 px-4 py-2 rounded-full font-semibold text-center hover:bg-yellow-300 transition">Register Now</a>
+                </div> -->
+            </div>
+        </div>
+        <!-- Mobile Overlay -->
+        <div id="mobile-overlay" class="fixed lg:hidden inset-0 top-0 bg-black/40 z-40 hidden transition-opacity duration-300 opacity-0"></div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="min-h-[80vh] flex items-center justify-center text-white relative" style="background: linear-gradient(135deg, #1e40af 0%, #4338ca 50%, #6366f1 100%);">
+        <div class="absolute inset-0 opacity-10" style="background-image: radial-gradient(circle at 20px 20px, rgba(255, 255, 255, 0.3) 1px, transparent 1px); background-size: 40px 40px;"></div>
+        
+        <div class="max-w-5xl mx-auto px-4 text-center" style="position: relative; z-index: 1;">
+            <h1 class="text-5xl md:text-7xl font-bold mb-6 leading-tight animate-on-scroll fade-in-up">
+                Train. Teach. Transform.
+            </h1>
+            <p class="text-2xl md:text-3xl mb-4 font-light leading-relaxed animate-on-scroll fade-in-up delay-100">
+                Teach the Qur'an. Touch Hearts. Transform Lives.
+            </p>
+            <p class="text-xl mb-8 max-w-3xl mx-auto opacity-90 animate-on-scroll fade-in-up delay-200">
+                Join Al Mauiza Foundation's Qur'an Teacher Training & Hiring Program in collaboration with Understand Qur'an Global (UQG) and learn how to teach the Qur'an with meaning, confidence, and purpose.
+            </p>
+            
+            <div class="bg-white/10 backdrop-blur-sm p-6 rounded-2xl mb-8 inline-block animate-on-scroll zoom-in delay-300">
+                <p class="text-lg mb-2">📍 In-Person at Ribat - Learning Nexus 2 Room, Karachi</p>
+                <p class="text-lg">🗓 27 Oct - 7 Nov 2025 | Free Training | Certificate + Teaching Opportunities</p>
+            </div>
+            
+            <div class="flex flex-col sm:flex-row gap-4 justify-center mt-8 animate-on-scroll fade-in-up delay-400">
+                <a href="https://forms.gle/Ry4sdkVsgU9tztoa6" target="_blank" class="bg-white text-indigo-600 px-8 py-4 rounded-full font-semibold hover:bg-gray-100 transition transform hover:scale-105">
+                    Register Now (Free)
+                </a>
+                <a href="https://tinyurl.com/4ban6byb" target="_blank" class="border-2 border-white px-8 py-4 rounded-full font-semibold hover:bg-white/10 transition transform hover:scale-105">
+                    Join WhatsApp Group
+                </a>
+            </div>
+            
+            <p class="text-lg mt-8 italic opacity-90 animate-on-scroll fade-in-up delay-400">
+                "Your knowledge can change lives - start by understanding the Qur'an the way it was meant to be understood."
+            </p>
+        </div>
+    </section>
+
+    <!-- About Section -->
+    <section class="section-padding bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center text-gray-800 mb-6 animate-on-scroll fade-in-up">Empowering Teachers. Illuminating Hearts.</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-12 animate-on-scroll zoom-in delay-100"></div>
+            
+            <div class="max-w-4xl mx-auto text-lg text-gray-700 leading-relaxed space-y-6 animate-on-scroll fade-in-up delay-200">
+                <p>
+                    <strong>Al Mauiza Foundation</strong> is dedicated to making the understanding of the Qur'an easy, inclusive, and accessible for everyone.
+                </p>
+                <p>
+                    Through its flagship initiative, <em>Understand Qur'an Global (UQG)</em>, we are nurturing a new generation of teachers who carry the message of the Qur'an with clarity, compassion, and purpose.
+                </p>
+                <p>
+                    Join this transformative program in Karachi to become a <strong>Certified UQG Instructor</strong> - equipped to inspire, teach, and impact lives through the divine words of Allah.
+                </p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Why Join Section -->
+    <section class="section-padding bg-gradient-to-r from-indigo-50 to-purple-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800 animate-on-scroll fade-in-up">Why Join</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-12 animate-on-scroll zoom-in delay-100"></div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift animate-on-scroll fade-in-up delay-100">
+                    <div class="text-4xl mb-4">💝</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Completely Free of Cost</h3>
+                    <p class="text-gray-600">Offered solely for the sake of Allah</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift animate-on-scroll fade-in-up delay-200">
+                    <div class="text-4xl mb-4">🎓</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Course Completion Certificate</h3>
+                    <p class="text-gray-600">Recognized by UQG & Al Mauiza Foundation</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift animate-on-scroll fade-in-up delay-300">
+                    <div class="text-4xl mb-4">👨‍🏫</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Teaching Opportunities</h3>
+                    <p class="text-gray-600">Eligible for UQG's global teaching network</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift animate-on-scroll fade-in-up delay-100">
+                    <div class="text-4xl mb-4">💰</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Earn as a Certified Teacher</h3>
+                    <p class="text-gray-600">Attractive per-class honorarium when you teach after certification</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift animate-on-scroll fade-in-up delay-200">
+                    <div class="text-4xl mb-4">📚</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Proven Teaching Methodology (TPI)</h3>
+                    <p class="text-gray-600">Simple, interactive & effective</p>
+                </div>
+                
+                <div class="bg-white p-6 rounded-xl shadow-lg hover-lift animate-on-scroll fade-in-up delay-300">
+                    <div class="text-4xl mb-4">🌍</div>
+                    <h3 class="text-xl font-bold text-gray-800 mb-2">Global Recognition</h3>
+                    <p class="text-gray-600">Join a movement active in 40+ countries</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- What You'll Learn -->
+    <section class="section-padding bg-white">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800 animate-on-scroll fade-in-up">What You'll Learn</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-12 animate-on-scroll zoom-in delay-100"></div>
+            
+            <div class="grid md:grid-cols-2 gap-8 max-w-4xl mx-auto animate-on-scroll fade-in-up delay-200">
+                <div class="flex items-start space-x-4">
+                    <div class="text-3xl flex-shrink-0">✓</div>
+                    <p class="text-lg text-gray-700">How to teach the Qur'an <strong>with understanding</strong>, not just recitation</p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-3xl flex-shrink-0">✓</div>
+                    <p class="text-lg text-gray-700">The <strong>Total Physical Interaction (TPI)</strong> method - learn by action</p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-3xl flex-shrink-0">✓</div>
+                    <p class="text-lg text-gray-700">Lesson planning, student engagement, and class management</p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-3xl flex-shrink-0">✓</div>
+                    <p class="text-lg text-gray-700"><strong>Teacher adab</strong> and spiritual development</p>
+                </div>
+                <div class="flex items-start space-x-4">
+                    <div class="text-3xl flex-shrink-0">✓</div>
+                    <p class="text-lg text-gray-700">Steps to become a Certified UQG Instructor</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Who Should Apply -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800 animate-on-scroll fade-in-up">Who Should Apply</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-12 animate-on-scroll zoom-in delay-100"></div>
+            
+            <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift animate-on-scroll fade-in-up delay-100">
+                    <div class="text-4xl mb-4">👩‍🏫</div>
+                    <p class="font-semibold text-gray-800">Teachers from schools or madaris</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift animate-on-scroll fade-in-up delay-200">
+                    <div class="text-4xl mb-4">🎓</div>
+                    <p class="font-semibold text-gray-800">Graduates and university students</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift animate-on-scroll fade-in-up delay-300">
+                    <div class="text-4xl mb-4">🏠</div>
+                    <p class="font-semibold text-gray-800">Homemakers and professionals</p>
+                </div>
+                <div class="bg-white p-6 rounded-xl shadow-lg text-center hover-lift animate-on-scroll fade-in-up delay-400">
+                    <div class="text-4xl mb-4">🤝</div>
+                    <p class="font-semibold text-gray-800">Volunteers and community members</p>
+                </div>
+            </div>
+            
+            <p class="text-center text-lg text-gray-700 mt-8 italic animate-on-scroll fade-in-up delay-400">
+                If you can read the Qur'an and speak Urdu or English - this program is for you.
+            </p>
+        </div>
+    </section>
+
+    <!-- Schedule -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #1e40af 0%, #4338ca 50%, #6366f1 100%);">
+        <div class="max-w-6xl mx-auto px-4 text-white">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 animate-on-scroll fade-in-up">Key Dates & Schedule</h2>
+            <div class="w-24 h-1 bg-white mx-auto mb-12 animate-on-scroll zoom-in delay-100"></div>
+            
+            <div class="grid md:grid-cols-3 gap-6">
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl hover-lift animate-on-scroll fade-in-up delay-200">
+                    <h3 class="text-2xl font-bold mb-4">Introductory Session (Online)</h3>
+                    <p class="text-lg mb-2">📅 Date will be announced in the WhatsApp group</p>
+                    <p class="text-sm opacity-90">💬 Joining the WhatsApp group is mandatory to complete registration</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl hover-lift animate-on-scroll fade-in-up delay-300">
+                    <h3 class="text-2xl font-bold mb-4">L1 - Urdu Training</h3>
+                    <p class="text-lg mb-2">📅 27th - 31st October</p>
+                    <p class="text-lg">🕕 6:30 PM - 10:00 PM</p>
+                </div>
+                
+                <div class="bg-white/10 backdrop-blur-sm p-8 rounded-2xl hover-lift animate-on-scroll fade-in-up delay-400">
+                    <h3 class="text-2xl font-bold mb-4">L1 - TT (Teacher Training)</h3>
+                    <p class="text-lg mb-2">📅 3rd - 7th November</p>
+                    <p class="text-lg">🕕 6:30 PM - 10:00 PM</p>
+                </div>
+            </div>
+            
+            <div class="mt-8 text-center animate-on-scroll fade-in-up delay-400">
+                <p class="text-xl">📍 Venue: <a href="https://www.ribat.com.pk/" target="_blank" class="underline hover:text-yellow-300 transition">Ribat - Learning Nexus 2 Room, Karachi</a></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Venue Section -->
+    <section class="section-padding bg-white">
+        <div class="max-w-7xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800 animate-on-scroll fade-in-up">Training Venue</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-12 animate-on-scroll zoom-in delay-100"></div>
+            
+            <div class="grid lg:grid-cols-2 gap-12 items-center">
+                <!-- Image Side -->
+                <div class="order-2 lg:order-1 animate-on-scroll fade-in-left delay-200">
+                    <div class="rounded-2xl overflow-hidden shadow-2xl hover-lift">
+                        <img src="https://i.postimg.cc/kgpmLqSs/Ribat.png" alt="Ribat - Learning Nexus" class="w-full h-full object-cover">
+                    </div>
+                </div>
+                
+                <!-- Info Side -->
+                <div class="order-1 lg:order-2 space-y-6 animate-on-scroll fade-in-right delay-300">
+                    <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl">
+                        <h3 class="text-3xl font-bold text-gray-800 mb-4">Ribat - Learning Nexus 2 Room</h3>
+                        <p class="text-lg text-gray-700 leading-relaxed mb-6">
+                            A premier learning space in Karachi, designed to provide an inspiring and comfortable environment for educational excellence. Ribat offers state-of-the-art facilities perfect for our intensive teacher training program.
+                        </p>
+                        
+                        <div class="space-y-4">
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">📍</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Location</h4>
+                                    <p class="text-gray-600">Karachi, Pakistan</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">🏢</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Facilities</h4>
+                                    <p class="text-gray-600">Modern classrooms, comfortable seating, audio-visual equipment</p>
+                                </div>
+                            </div>
+                            
+                            <div class="flex items-start space-x-4">
+                                <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                                    <span class="text-2xl">🚗</span>
+                                </div>
+                                <div>
+                                    <h4 class="font-bold text-gray-800 mb-1">Accessibility</h4>
+                                    <p class="text-gray-600">Easy access with ample parking space</p>
+                                </div>
+                            </div>
+                        </div>
+                        
+                        <div class="mt-8 flex flex-col sm:flex-row gap-4">
+                            <a href="https://www.ribat.com.pk/" target="_blank" class="flex-1 bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-6 py-4 rounded-full font-semibold text-center hover:shadow-lg transition transform hover:scale-105">
+                                Visit Website
+                            </a>
+                            <a href="https://maps.app.goo.gl/M51SPanAAHeFm6ig6" target="_blank" class="flex-1 border-2 border-indigo-600 text-indigo-600 px-6 py-4 rounded-full font-semibold text-center hover:bg-indigo-50 transition transform hover:scale-105">
+                                Get Directions
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="mt-12 animate-on-scroll zoom-in delay-300">
+                <div class="bg-gradient-to-r from-indigo-50 to-purple-50 p-8 rounded-2xl text-center">
+                    <p class="text-lg text-gray-700 mb-4">
+                        📍 <strong>Easy to Find:</strong> Click below to open the venue location in Google Maps
+                    </p>
+                    <a href="https://maps.app.goo.gl/M51SPanAAHeFm6ig6" target="_blank" class="inline-flex items-center space-x-2 text-indigo-600 hover:text-indigo-700 font-semibold text-lg transition">
+                        <svg class="w-6 h-6" fill="currentColor" viewBox="0 0 24 24">
+                            <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
+                        </svg>
+                        <span>Open in Google Maps</span>
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Benefits -->
+    <section class="section-padding bg-gray-50">
+        <div class="max-w-6xl mx-auto px-4">
+            <h2 class="text-4xl md:text-5xl font-bold text-center mb-6 text-gray-800 animate-on-scroll fade-in-up">Benefits of Joining</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-12 animate-on-scroll zoom-in delay-100"></div>
+            
+            <div class="max-w-3xl mx-auto space-y-4">
+                <div class="flex items-center space-x-4 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl animate-on-scroll fade-in-up delay-200">
+                    <span class="text-3xl">🌿</span>
+                    <p class="text-lg text-gray-800 font-medium">Learn to teach with impact</p>
+                </div>
+                <div class="flex items-center space-x-4 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl animate-on-scroll fade-in-up delay-300">
+                    <span class="text-3xl">🎓</span>
+                    <p class="text-lg text-gray-800 font-medium">Receive an official UQG Certificate</p>
+                </div>
+                <div class="flex items-center space-x-4 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl animate-on-scroll fade-in-up delay-400">
+                    <span class="text-3xl">💼</span>
+                    <p class="text-lg text-gray-800 font-medium">Earn honorarium for each class you teach as a certified instructor</p>
+                </div>
+                <div class="flex items-center space-x-4 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl animate-on-scroll fade-in-up delay-300">
+                    <span class="text-3xl">🤝</span>
+                    <p class="text-lg text-gray-800 font-medium">Join a growing network of educators</p>
+                </div>
+                <div class="flex items-center space-x-4 bg-gradient-to-r from-indigo-50 to-purple-50 p-6 rounded-xl animate-on-scroll fade-in-up delay-400">
+                    <span class="text-3xl">🕌</span>
+                    <p class="text-lg text-gray-800 font-medium">Serve your community and earn ongoing reward (Sadaqah Jariyah)</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Registration CTA -->
+    <section class="section-padding bg-white">
+        <div class="max-w-4xl mx-auto px-4 text-center">
+            <h2 class="text-4xl md:text-5xl font-bold text-gray-800 mb-6 animate-on-scroll fade-in-up">How to Register</h2>
+            <div class="w-24 h-1 bg-gradient-to-r from-indigo-600 to-purple-600 mx-auto mb-12 animate-on-scroll zoom-in delay-100"></div>
+            
+            <div class="grid md:grid-cols-2 gap-8 mb-12">
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-xl animate-on-scroll fade-in-up delay-200">
+                    <div class="text-5xl mb-4">1️⃣</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Fill out the Registration Form</h3>
+                    <a href="https://forms.gle/Ry4sdkVsgU9tztoa6" target="_blank" class="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                        Click here to register
+                    </a>
+                </div>
+                
+                <div class="bg-gradient-to-br from-indigo-50 to-purple-50 p-8 rounded-2xl shadow-xl animate-on-scroll fade-in-up delay-300">
+                    <div class="text-5xl mb-4">2️⃣</div>
+                    <h3 class="text-2xl font-bold text-gray-800 mb-4">Join the Official WhatsApp Group</h3>
+                    <a href="https://tinyurl.com/4ban6byb" target="_blank" class="inline-block bg-gradient-to-r from-indigo-600 to-purple-600 text-white px-8 py-4 rounded-full font-semibold hover:shadow-lg transition transform hover:scale-105">
+                        Join Now
+                    </a>
+                </div>
+            </div>
+            
+            <p class="text-gray-600 bg-yellow-50 border-l-4 border-yellow-500 p-4 rounded animate-on-scroll zoom-in delay-400">
+                🟢 <strong>Note:</strong> Registration is complete only after joining the WhatsApp group.
+            </p>
+        </div>
+    </section>
+
+    <!-- Final CTA -->
+    <section class="section-padding" style="background: linear-gradient(135deg, #1e40af 0%, #4338ca 50%, #6366f1 100%);">
+        <div class="max-w-4xl mx-auto px-4 text-center text-white">
+            <h2 class="text-4xl md:text-5xl font-bold mb-6 animate-on-scroll fade-in-up">Begin a Journey that Matters</h2>
+            <p class="text-xl mb-8 leading-relaxed animate-on-scroll fade-in-up delay-100">
+                Let's embark together on this blessed journey of Qur'anic learning and teaching - 
+                Purely for the sake of Allah, with sincerity in our hearts and purpose in our actions. 🤍
+            </p>
+            
+            <p class="text-3xl font-bold mb-8 animate-on-scroll fade-in-up delay-200">
+                Teach the Qur'an. Touch Hearts. Transform Lives.
+            </p>
+            
+            <a href="https://forms.gle/Ry4sdkVsgU9tztoa6" target="_blank" class="inline-block bg-white text-indigo-600 px-12 py-5 rounded-full font-bold text-xl hover:bg-gray-100 transition transform hover:scale-105 animate-on-scroll zoom-in delay-300">
+                Register Now
+            </a>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-gray-900 text-white relative overflow-hidden">
+        <!-- Decorative gradient overlay -->
+        <div class="absolute inset-0 bg-gradient-to-br from-indigo-900/20 to-purple-900/20"></div>
+        
+        <div class="relative z-10">
+            <!-- Main Footer Content -->
+            <div class="max-w-7xl mx-auto px-4 py-16">
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-12 mb-12">
+                    <!-- About Section -->
+                    <div class="lg:col-span-2">
+                        <div class="flex items-center space-x-3 mb-6">
+                            <div>
+                                <span class="text-2xl font-bold">Al Mauiza Foundation</span>
+                                <p class="text-xs text-gray-400 mt-1">Registered under Section 42 of the Companies Act (2017)</p>
+                            </div>
+                        </div>
+                        <p class="text-gray-300 leading-relaxed mb-6 text-lg">
+                            Making understanding of the Qur'an easy, inclusive, and accessible for the Ummah through education, research, and community empowerment.
+                        </p>
+                        <div class="flex space-x-4">
+                            <a href="#" class="w-12 h-12 bg-white/10 hover:bg-blue-600 rounded-full flex items-center justify-center transition transform hover:scale-110" title="Facebook">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M24 12.073c0-6.627-5.373-12-12-12s-12 5.373-12 12c0 5.99 4.388 10.954 10.125 11.854v-8.385H7.078v-3.47h3.047V9.43c0-3.007 1.792-4.669 4.533-4.669 1.312 0 2.686.235 2.686.235v2.953H15.83c-1.491 0-1.956.925-1.956 1.874v2.25h3.328l-.532 3.47h-2.796v8.385C19.612 23.027 24 18.062 24 12.073z"/>
+                                </svg>
+                            </a>
+                            <a href="#" class="w-12 h-12 bg-white/10 hover:bg-blue-700 rounded-full flex items-center justify-center transition transform hover:scale-110" title="LinkedIn">
+                                <svg class="w-6 h-6 text-white" fill="currentColor" viewBox="0 0 24 24">
+                                    <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z"/>
+                                </svg>
+                            </a>
+                        </div>
+                    </div>
+                    
+                    <!-- Quick Links -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-6 text-white">Quick Links</h3>
+                        <ul class="space-y-3">
+                            <li><a href="index.html#about" class="text-gray-300 hover:text-indigo-400 transition flex items-center space-x-2">
+                                <span>→</span><span>About Us</span>
+                            </a></li>
+                            <li><a href="index.html#vision" class="text-gray-300 hover:text-indigo-400 transition flex items-center space-x-2">
+                                <span>→</span><span>Vision & Mission</span>
+                            </a></li>
+                            <li><a href="index.html#programs" class="text-gray-300 hover:text-indigo-400 transition flex items-center space-x-2">
+                                <span>→</span><span>Programs</span>
+                            </a></li>
+                            <li><a href="index.html#leadership" class="text-gray-300 hover:text-indigo-400 transition flex items-center space-x-2">
+                                <span>→</span><span>Leadership</span>
+                            </a></li>
+                            <li><a href="index.html#contact" class="text-gray-300 hover:text-indigo-400 transition flex items-center space-x-2">
+                                <span>→</span><span>Contact</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                    
+                    <!-- Programs -->
+                    <div>
+                        <h3 class="text-xl font-bold mb-6 text-white">Our Programs</h3>
+                        <ul class="space-y-3">
+                            <li><a href="https://understandquranglobal.com/courses/" target="_blank" class="text-gray-300 hover:text-indigo-400 transition flex items-center space-x-2">
+                                <span>📚</span><span>UQG Courses</span>
+                            </a></li>
+                            <li><a href="teacher-training.html" class="text-gray-300 hover:text-indigo-400 transition flex items-center space-x-2">
+                                <span>👨‍🏫</span><span>Teacher Training</span>
+                            </a></li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Contact Info Bar -->
+                <div class="grid md:grid-cols-2 lg:grid-cols-4 gap-6 py-8 border-t border-gray-700">
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl">📧</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">Email Us</p>
+                            <a href="mailto:info@almauiza.org" class="text-white hover:text-indigo-400 transition">info@almauiza.org</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl">📞</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">Call Us</p>
+                            <a href="tel:+92518480282" class="text-white hover:text-indigo-400 transition">+92 51 8480282</a>
+                        </div>
+                    </div>
+                    <div class="flex items-center space-x-4 lg:col-span-2">
+                        <div class="w-12 h-12 bg-indigo-600 rounded-full flex items-center justify-center flex-shrink-0">
+                            <span class="text-xl">📍</span>
+                        </div>
+                        <div>
+                            <p class="text-gray-400 text-sm">Address</p>
+                            <p class="text-white">First Floor, Arsalan Arcade, Pakistan Town Phase 1, Main Markaz, Islamabad, Pakistan</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            
+            <!-- Bottom Bar -->
+            <div class="border-t border-gray-800">
+                <div class="max-w-7xl mx-auto px-4 py-6">
+                    <div class="flex flex-col md:flex-row justify-between items-center space-y-4 md:space-y-0">
+                        <p class="text-gray-400 text-sm">
+                            © 2025 Al Mauiza Foundation. All rights reserved.
+                        </p>
+                        <div class="flex space-x-6 text-sm">
+                            <a href="privacy.html" class="text-gray-400 hover:text-indigo-400 transition">Privacy Policy</a>
+                            <a href="terms.html" class="text-gray-400 hover:text-indigo-400 transition">Terms of Service</a>
+                            <a href="404.html" class="text-gray-400 hover:text-indigo-400 transition">Donate</a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+   <script src="script.js"></script>
+</body>
+</html>
