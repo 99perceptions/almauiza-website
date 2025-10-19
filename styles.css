@@ -1,5 +1,17 @@
 @import url('https://fonts.googleapis.com/css2?family=Playfair+Display:wght@400;600;700&family=Inter:wght@300;400;500;600;700&display=swap');
+/* CSS Reset - Add this AFTER @import, BEFORE * { scroll-behavior } */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
 
+html, body {
+    margin: 0;
+    padding: 0;
+    height: 100%;
+    overflow-x: hidden;
+}
 * {
     scroll-behavior: smooth;
 }
@@ -332,3 +344,4 @@ h1, h2, h3, h4 {
         transform: scale(1);
     }
 }
+
